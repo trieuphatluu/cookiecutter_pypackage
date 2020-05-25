@@ -1,10 +1,10 @@
 {
 	"full_name": "Trieu Phat Luu",
-	"email": "tpluu2207@gmail.com.com",
+	"email": "tpluu2207@gmail.com",
 	"github_username": "trieuphatluu",
 	"project_name": "Your Project Name",
 	"project_slug": "{{ cookiecutter.project_name.lower().replace(' ', '_').replace('-', '_') }}",
-	"project_short_description": "Description of your python package",
+	"project_short_description": "Description",
 	"pypi_username": "{{ cookiecutter.github_username }}",
 	"version": "0.1.0",
 	"use_pytest": "n",

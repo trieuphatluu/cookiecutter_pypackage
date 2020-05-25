@@ -1,4 +1,5 @@
-pip==19.2.3
+# Usage:
+# pip install -r requirements.txt
 bump2version==0.5.11
 wheel==0.33.6
 watchdog==0.9.0
@@ -7,6 +8,22 @@ tox==3.14.0
 coverage==4.5.4
 Sphinx==1.8.5
 twine==1.14.0
+# FileIO
+pyYAML
+requests
+# Data analysis
+numpy
+pandas
+xlrd
+scipy
+sklearn
+statsmodels
+# Visualization
+matplotlib
+ipympl
+# Utilities
+tqdm
+# Test
 {% if cookiecutter.use_pytest == 'y' -%}
 pytest==4.6.5
 pytest-runner==5.1{% endif %}
