@@ -103,3 +103,22 @@ ENV/
 
 # IDE settings
 .vscode/
+
+# media files
+*.jpg
+*.gif
+*.pdf
+*.mp4
+*.avi
+*.html
+
+# user data files
+*.pkl
+*.pickle
+*.tar
+*.gz
+*.jar
+*.h5
+
+# Checkpoint model
+*.ckpt*

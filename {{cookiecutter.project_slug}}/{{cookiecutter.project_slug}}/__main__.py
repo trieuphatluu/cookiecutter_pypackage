@@ -30,11 +30,15 @@ import skimage.io as skio
 from tqdm import tqdm
 import time
 from datetime import datetime
+# Custom import
+from {{cookiecutter.project_slug}}.utils_dir import utils
+from {{cookiecutter.project_slug}}.utils_dir.utils import timeit, get_varargin, log_info
+from {{cookiecutter.project_slug}}.utils_dir.utils import logger as logging
 #%%
 # =================================================================================================================
 # MAIN
 def main(**kwargs):
-	pass
+	logging.info('Hello world!')
 # =================================================================================================================
 # DEBUG
 if __name__ == '__main__':

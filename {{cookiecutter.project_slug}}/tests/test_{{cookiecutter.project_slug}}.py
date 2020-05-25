@@ -8,11 +8,12 @@ import pytest
 import unittest
 {%- endif %}
 
-from {{ cookiecutter.project_slug }} import {{ cookiecutter.project_slug }}
+from {{cookiecutter.project_slug}}.utils_dir.utils import logger as logging
+
+# =================================================================================================================
+logging.info('Test')
 
 {%- if cookiecutter.use_pytest == 'y' %}
-
-
 @pytest.fixture
 def response():
     """Sample pytest fixture.
