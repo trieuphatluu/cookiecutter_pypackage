@@ -10,14 +10,13 @@ Table of contents
 
 ## Introduction
 
-This template use cookiecutter to greate required files and directories for your python packages.
+This template use cookiecutter to generate required files and directories for your python packages.
 
 -   GitHub repo: https://github.com/trieuphatluu/cookiecutter_pypackage
--   Free software: BSD license
+-   Free software: MIT license
 
 ## Features
 
--   Create project template for python package.
 -   Generate the following files and folders for your python package
 
 ```bash
@@ -46,7 +45,7 @@ This template use cookiecutter to greate required files and directories for your
 1. Install the latest Cookiecutter if you haven't installed it yet.
 
 ```bash
-pip install -U cookiecutter
+pip install cookiecutter
 ```
 
 2. Run cookiecutter command
