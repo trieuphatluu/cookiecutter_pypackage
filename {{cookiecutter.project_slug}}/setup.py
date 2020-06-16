@@ -1,43 +1,64 @@
 #!/usr/bin/env python
+"""
+Simple check list to create the package for pypi.
+1. Change the version in __init__.py, setup.py as well as docs/source/conf.py.
+2. Unpin specific versions from setup.py (like isort).
+2. Commit these changes with the message: "Release: VERSION"
+3. Add a tag in git to mark the release: git tag VERSION -m'Adds tag VERSION for pypi"
+   Push the tag to git: git push --tags origin master
+4. Build both the sources and the wheel. Do not change anything in setup.py between
+   creating the wheel and the source distribution (obviously).
+   For the wheel, run: "python setup.py bdist_wheel" in the top level directory.
+   (this will build a wheel for the python version you use to build it).
+   For the sources, run: "python setup.py sdist"
+   You should now have a /dist directory with both .whl and .tar.gz source versions.
+5. Check that everything looks correct by uploading the package to the pypi test server:
+   twine upload dist/* -r pypitest
+   (pypi suggest using twine as other methods upload files via plaintext.)
+   You may have to specify the repository url, use the following command then:
+   twine upload dist/* -r pypitest --repository-url=https://test.pypi.org/legacy/
+   Check that you can install it in a virtualenv by running:
+   pip install -i https://testpypi.python.org/pypi transformers
+6. Upload the final version to actual pypi:
+   twine upload dist/* -r pypi
+7. Copy the release notes from RELEASE.md to the tag in github once everything is
+looking hunky-dory.
+8. Update the documentation commit in .circleci/deploy.sh for the accurate
+   documentation to be displayed
+9. Update README.md to redirect to correct documentation.
+"""
 
-"""The setup script."""
+# Custom Packages
+# ======================================================================================
+from setuptools import find_packages
+from setuptools import setup
 
-from setuptools import setup, find_packages
-
-{%- set license_classifiers = {
-    'MIT license': 'License :: OSI Approved :: MIT License',
-    'BSD license': 'License :: OSI Approved :: BSD License',
-    'ISC license': 'License :: OSI Approved :: ISC License (ISCL)',
-    'Apache Software License 2.0': 'License :: OSI Approved :: Apache Software License',
-    'GNU General Public License v3': 'License :: OSI Approved :: GNU General Public License v3 (GPLv3)'
-} %}
 
 setup(
-    author="{{ cookiecutter.full_name.replace('\"', '\\\"') }}",
-    author_email='{{ cookiecutter.email }}',
-    python_requires='>=3.5',
-    classifiers=[
-        'Development Status :: 2 - Pre-Alpha',
-        'Intended Audience :: Developers',
-{%- if cookiecutter.open_source_license in license_classifiers %}
-        '{{ license_classifiers[cookiecutter.open_source_license] }}',
-{%- endif %}
-        'Natural Language :: English',
-        'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
-        'Programming Language :: Python :: 3.8',
-    ],
-    description="{{ cookiecutter.project_short_description }}",
-{%- if cookiecutter.open_source_license in license_classifiers %}
-    license="{{ cookiecutter.open_source_license }}",
-{%- endif %}
+    name="{{cookiecutter.project_slug}}",
+    version="0.1.0",
+    author="{{cookiecutter._full_name}}",
+    author_email="cookiecutter._email",
+    description="",
+    keywords="Python Packages",
+    license="Apache",
+    url="https://github.com/trieuphatluu/",
+    packages=find_packages(),
+    install_requires=[],
+    python_requires=">=3.6.0",
     include_package_data=True,
-    keywords='{{ cookiecutter.project_slug }}',
-    name='{{ cookiecutter.project_slug }}',
-    packages=find_packages(include=['{{ cookiecutter.project_slug }}', '{{ cookiecutter.project_slug }}.*']),
-    test_suite='tests',
-    version='{{ cookiecutter.version }}',
+    test_suite="tests",
     zip_safe=False,
+    classifiers=[
+        "Development Status :: 2 - Pre-alpha",
+        "Intended Audience :: Developers",
+        "Intended Audience :: Education",
+        "Intended Audience :: Science/Research",
+        "License :: OSI Approved :: Apache Software License",
+        "Operating System :: OS Independent",
+        "Natural Language :: English",
+        "Programming Language :: Python :: 3",
+        "Programming Language :: Python :: 3.7",
+        "Topic :: Python Packages",
+    ],
 )
