@@ -11,6 +11,7 @@
 	"_create_author_file": "y",
 	"_copy_without_render": [
         "*.html",
-        ".vscode/google.mustache"        
+        ".vscode/google.mustache",
+        ".github/*"
     ]
 }

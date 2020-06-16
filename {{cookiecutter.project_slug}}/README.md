@@ -1,10 +1,3 @@
-{% set is_open_source = cookiecutter.open_source_license != 'Not open source' -%}
-{% for _ in cookiecutter.project_name %}={% endfor %}
-{{ cookiecutter.project_name }}
-{% for _ in cookiecutter.project_name %}={% endfor %}
-
-{{ cookiecutter.project_short_description }}
-
 ### Markdown
 
 Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
@@ -31,11 +24,10 @@ Syntax highlighted code block
 
 For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
 
-{% if is_open_source %}
-
--   Free software: {{ cookiecutter.open_source_license }}
-    {% endif %}
 
 ## Features
 
 -   TODO
+
+# License
+df_DETR is released under the Apache 2.0 license. Please see the [LICENSE](LICENSE) file for more information.
