@@ -1,19 +1,7 @@
+# Requirements
 # Usage:
 # pip install -r requirements.txt
-# FileIO
-pyyaml
-requests
-# Data analysis
-numpy
-pandas
-xlrd
-scipy
-sklearn
-statsmodels
-# Visualization
-matplotlib
-ipympl
-# Utilities
-tqdm
-# Test
-pytest
+
+-r requirements/build_requirements.txt
+-r requirements/dev_requirements.txt
+-r requirements/docs_requirements.txt
