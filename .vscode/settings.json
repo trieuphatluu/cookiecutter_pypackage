@@ -3,6 +3,6 @@
     "python.autoComplete.extraPaths": [
         "./path_to_your_module"
     ],
-    "python.pythonPath": "path_to_python.exe",
+    "python.pythonPath": "C:\\Users\\pluu\\.conda\\envs\\pluu\\python.exe",
     "peacock.remoteColor": "#42b883"
 }

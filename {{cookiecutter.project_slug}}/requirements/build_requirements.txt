@@ -21,7 +21,7 @@ pandas
 missingno==0.4.2
 
 # CV
-opencv-python==4.2.0.32
+opencv-python==4.4.0.42
 
 # Visualization
 matplotlib==3.1.3
