@@ -1,0 +1,8 @@
+{
+    "terminal.integrated.fontFamily": "monospace",
+    "python.autoComplete.extraPaths": [
+        "./path_to_your_module"
+    ],
+    "python.pythonPath": "path_to_python.exe",
+    "peacock.remoteColor": "#42b883"
+}
