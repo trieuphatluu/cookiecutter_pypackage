@@ -66,7 +66,6 @@ cd ~ && make_folder venv
 cd venv
 if [[ -d "$VENV_NAME" ]]; then
     print "$VENV_NAME venv exist"
-    exit 1
 else
     print "create $VENV_NAME virtual env"
     make_folder $VENV_NAME
@@ -77,4 +76,5 @@ fi
 source ~/venv/$VENV_NAME/bin/activate
 
 # install requirements
+print "pip install -r requirements.txt"
 ~/venv/$VENV_NAME/bin/pip install -r ${PIP_REQUIREMENTS}

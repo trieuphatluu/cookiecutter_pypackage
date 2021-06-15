@@ -4,7 +4,7 @@ WORKSPACE_FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && 
 PROJECT_NAME="${PWD##*/}"
 
 make_git_repo(){
-    curl -H "Authorization:token 6c4de563467c2fc0caac7c6c2b16b3c6949e15a3" https://api.github.com/user/repos -d "{\"name\":\"$1\", \"private\": \"true\"}"
+    curl -H "Authorization:token " https://api.github.com/user/repos -d "{\"name\":\"$1\", \"private\": \"true\"}"
 }
 
 # -------------------------------------START---------------------------------------
