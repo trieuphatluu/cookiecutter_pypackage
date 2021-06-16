@@ -11,6 +11,17 @@
             "problemMatcher": []
         },
         {
+            "label": "python_md_paste_image_link",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "md_paste_image_link.py",
+            ],
+            "problemMatcher": []
+        },
+        {
             "label": "chmod",
             "type": "shell",
             "command": "sudo chmod +x ${file}",
