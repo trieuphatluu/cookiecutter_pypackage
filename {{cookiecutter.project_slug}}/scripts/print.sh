@@ -25,6 +25,14 @@ function print(){
     fi
 }
 
+function print_warning(){
+    if [[ "$#" == 1 ]]; then
+        echo -e "$YELLOW Warning: $1 $CLEAR"
+    else
+        echo -e "$1 $2 $CLEAR"
+    fi
+}
+
 function print_error(){
     if [[ "$#" == 1 ]]; then
         echo -e "$RED Error: $1 $CLEAR"

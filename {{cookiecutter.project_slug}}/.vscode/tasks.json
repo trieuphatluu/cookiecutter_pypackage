@@ -4,11 +4,43 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "run bash",
-            "type": "shell",
-            "command": "bash ${file}",
+            "label": "bash file",
+            "command": "bash",
+            "windows": {
+                "args": [
+                    "/c/Users/pluu/${workspaceFolderBasename}/scripts/${fileBasename}"
+                ],
+            },
+            "linux": {
+                "args": [
+                    "${file}"
+                ],
+            },
             "_runner": "terminal",
             "problemMatcher": []
+        },
+        {
+            "label": "chmod",
+            "type": "shell",
+            "command": "sudo chmod +x ${file}",
+            "_runner": "terminal",
+            "problemMatcher": []
+        },
+        {
+            "label": "python_autoflake",
+            "window": {
+                "command": "C:\\Users\\pluu\\Anaconda3\\envs\\cobotarm\\python.exe",
+            },
+            "linux": {
+                "command": "$HOME/venv/cobotarm/bin/python.exe",
+            },
+            "args": [
+                "-m",
+                "autoflake",
+                "--in-place",
+                "--remove-all-unused-imports",
+                "${file}"
+            ]
         },
         {
             "label": "python_md_paste_image_link",
@@ -22,22 +54,15 @@
             "problemMatcher": []
         },
         {
-            "label": "chmod",
+            "label": "python_md_screen_capture",
             "type": "shell",
-            "command": "sudo chmod +x ${file}",
-            "_runner": "terminal",
-            "problemMatcher": []
-        },
-        {
-            "label": "autoflake",
-            "command": "/home/pi/venv/cncvc/bin/python",
+            "command": "bash",
             "args": [
-                "-m",
-                "autoflake",
-                "--in-place",
-                "--remove-all-unused-imports",
-                "${file}"
-            ]
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "md_screen_capture.py",
+            ],
+            "problemMatcher": []
         }
     ]
 }

@@ -3,7 +3,6 @@
 """
 logging_util.py
 Description:
-
 Author: PhatLuu
 Contact: tpluu2207@gmail.com
 Created on: 2020/06/11
@@ -28,7 +27,6 @@ class colorFormatter(logging.Formatter):
     Summary:
     --------
     Customize color for logging
-
     Inputs:
     -------
         logging (logging): logging
@@ -66,7 +64,6 @@ def logging_setup():
     Summary:
     --------
     Setup logging for custom format
-
     Returns:
     --------
         logging: custom logging
