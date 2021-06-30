@@ -4,9 +4,18 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "label": "run bash",
-            "type": "shell",
-            "command": "bash ${file}",
+            "label": "bash file",
+            "command": "bash",
+            "windows": {
+                "args": [
+                    "/c/Users/pluu/${workspaceFolderBasename}/scripts/${fileBasename}"
+                ],
+            },
+            "linux": {
+                "args": [
+                    "${file}"
+                ],
+            },
             "_runner": "terminal",
             "problemMatcher": []
         },
@@ -18,15 +27,65 @@
             "problemMatcher": []
         },
         {
-            "label": "autoflake",
-            "command": "/home/pi/venv/cncvc/bin/python",
+            "label": "python_autoflake",
+            "windows": {
+                "command": "C:\\Users\\pluu\\Anaconda3\\envs\\cobotarm\\python.exe",
+            },
+            "linux": {
+                "command": "$HOME/venv/cobotarm/bin/python.exe",
+            },
             "args": [
                 "-m",
                 "autoflake",
                 "--in-place",
                 "--remove-all-unused-imports",
                 "${file}"
-            ]
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "python_md_paste_image_link",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "md_paste_image_link.py",
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "python_md_paste_youtube_link",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "md_paste_youtube_link.py",
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "python_git_label_config",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "git_label_config.py",
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "python_md_screen_capture",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "md_screen_capture.py",
+            ],
+            "problemMatcher": []
         }
     ]
 }

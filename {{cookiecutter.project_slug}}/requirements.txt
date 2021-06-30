@@ -2,6 +2,57 @@
 # Usage:
 # pip install -r requirements.txt
 
--r requirements/build_requirements.txt
--r requirements/dev_requirements.txt
--r requirements/docs_requirements.txt
+# =================================BUILD REQUIREMENTS=================================
+pyyaml
+h5py==2.10.0
+xlrd
+
+# Web
+beautifulsoup4
+requests
+selenium
+pyperclip==1.8.0
+PyAutoGUI==0.9.50
+
+# GUI dev
+pyqt5==5.15.4
+qtawesome
+pyinstaller==4.0
+
+# Data analysis
+numpy==1.19.5
+pandas
+missingno==0.4.2
+
+# CV
+opencv-python==4.4.0.42
+
+# Visualization
+matplotlib==3.1.3
+pydot
+graphviz==0.13.2
+Pillow==7.0.0
+
+# Utils
+tqdm==4.43.0
+pytest==6.2.2
+regex
+
+# =================================DEV REQUIREMENTS=================================
+coverage
+flake8==3.8.3
+autoflake==1.3.1
+isort==5.5.3
+black==19.10b0
+jupyterlab
+# for jupyter kernel
+ipykernel 
+
+# =================================DOCS REQUIREMENTS=================================
+mkdocs>=1.1
+Pygments>=2.4
+markdown>=3.2
+pymdown-extensions>=7.0
+mkdocs-material-extensions>=1.0
+mkdocs-minify-plugin>=0.3
+mkdocs-redirects>=1.0

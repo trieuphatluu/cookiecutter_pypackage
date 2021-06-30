@@ -54,6 +54,17 @@
             "problemMatcher": []
         },
         {
+            "label": "python_md_paste_youtube_link",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "md_paste_youtube_link.py",
+            ],
+            "problemMatcher": []
+        },
+        {
             "label": "python_md_screen_capture",
             "type": "shell",
             "command": "bash",
