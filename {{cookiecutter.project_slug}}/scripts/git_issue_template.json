@@ -1,0 +1,24 @@
+{
+    "title": "Issue Title",
+    "assignees": [
+        "luutp"
+    ],
+    "labels": [
+        ":hourglass_flowing_sand: Priority-High",
+        ":floppy_disk: Firmware"
+    ],
+    "milestone": 1,
+    "body": [
+        "## Description",
+        "",
+        "<!-- Please provide a brief description of the feature -->",
+        "",
+        "### Use Cases",
+        "",
+        "<!-- Please describe how your suggestion would benefit you and other users -->",
+        "",
+        "### Screenshots / Mockups",
+        "",
+        "<!-- If applicable, provide some mockups or screenshots -->"
+    ]
+}
