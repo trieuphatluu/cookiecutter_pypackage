@@ -20,6 +20,9 @@ import json
 # Web pages and URL Related
 import requests
 
+# GUI and User Interfaces Packages
+import pyautogui
+
 # Utilities
 import time
 
@@ -91,7 +94,42 @@ def get_args_parser():
     return parser
 
 
+def get_latest_issue_id():
+    issue_id = None
+    url = "https://api.github.com/repos/luutp/esp32stepperdriver/issues"
+    token = {
+        "Authorization": f"token {GIT_AUTH}",
+        "Accept": "application/vnd.github.inertia-preview+json",
+    }
+    data_dict = {
+        "sort": "created",
+        "per_page": 2,
+    }
+    try:
+        r = requests.get(url, data=json.dumps(data_dict), headers=token)
+        print(f"Status code: {r.status_code}")
+        latest_issue = r.json()[0]
+        issue_id = latest_issue["id"]
+    except Exception as e:
+        print(e)
+    return issue_id
+
+
+def create_project_card(column_id, issue_id):
+    url = f"https://api.github.com/projects/columns/{column_id}/cards"
+    token = {
+        "Authorization": f"token {GIT_AUTH}",
+        "Accept": "application/vnd.github.inertia-preview+json",
+    }
+    data_dict = {"content_id": issue_id, "content_type": "Issue"}
+    r = requests.post(url, data=json.dumps(data_dict), headers=token)
+    print(f"Status code: {r.status_code}")
+    print(r.text)
+    print("DONE")
+
+
 def main(args):
+    column_id = 14960513
     # Parse input arguments
     config_filepath = args.f
 
@@ -102,11 +140,17 @@ def main(args):
     config_dict = parse_issue_config(config_filepath)
     print(config_dict)
 
-    response = requests.post(
-        url, data=json.dumps(config_dict), headers=token, timeout=10
-    )
+    r = requests.post(url, data=json.dumps(config_dict), headers=token, timeout=10)
+    print(f"Status code: {r.status_code}")
 
+    # Remove file
     os.remove(config_filepath)
+    # Close IDE
+    pyautogui.hotkey("ctrl", "w", interval=0.15)
+    # Get latest issue ID
+    issue_id = get_latest_issue_id()
+    if issue_id is not None:
+        create_project_card(column_id, issue_id)
 
 
 # =====================================DEBUG===================================

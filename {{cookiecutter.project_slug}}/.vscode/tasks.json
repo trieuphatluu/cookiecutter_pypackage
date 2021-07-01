@@ -20,6 +20,22 @@
             "problemMatcher": []
         },
         {
+            "label": "bash make_git_issue",
+            "command": "bash",
+            "windows": {
+                "args": [
+                    "/c/Users/pluu/${workspaceFolderBasename}/scripts/make_git_issue.sh"
+                ],
+            },
+            "linux": {
+                "args": [
+                    "${file}"
+                ],
+            },
+            "_runner": "terminal",
+            "problemMatcher": []
+        },
+        {
             "label": "chmod",
             "type": "shell",
             "command": "sudo chmod +x ${file}",
@@ -28,7 +44,7 @@
         },
         {
             "label": "python_autoflake",
-            "window": {
+            "windows": {
                 "command": "C:\\Users\\pluu\\Anaconda3\\envs\\cobotarm\\python.exe",
             },
             "linux": {
@@ -40,7 +56,8 @@
                 "--in-place",
                 "--remove-all-unused-imports",
                 "${file}"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "python_md_paste_image_link",
@@ -61,6 +78,28 @@
                 "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
                 "-f",
                 "md_paste_youtube_link.py",
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "python_git_label_config",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "git_label_config.py",
+            ],
+            "problemMatcher": []
+        },
+        {
+            "label": "python_git_create_issue",
+            "type": "shell",
+            "command": "bash",
+            "args": [
+                "/c/Users/pluu/${workspaceFolderBasename}/scripts/run_python_file.sh",
+                "-f",
+                "git_create_issue.py -f ${file}",
             ],
             "problemMatcher": []
         },

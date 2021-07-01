@@ -1,12 +1,14 @@
 {
     "title": "Issue Title",
     "assignees": [
-        "luutp"
+        "luutp",
+        "devlinhtran"
     ],
     "labels": [
         ":hourglass_flowing_sand: Priority-High",
         ":floppy_disk: Firmware"
     ],
+    // milestone: 1: Hardware PCB development ; 2:Motor Controller; 3: Interfaces; 4: sensor reading
     "milestone": 1,
     "body": [
         "## Description",
