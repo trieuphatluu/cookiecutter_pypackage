@@ -20,22 +20,6 @@
             "problemMatcher": []
         },
         {
-            "label": "bash make_git_issue",
-            "command": "bash",
-            "windows": {
-                "args": [
-                    "/c/Users/pluu/${workspaceFolderBasename}/scripts/make_git_issue.sh"
-                ],
-            },
-            "linux": {
-                "args": [
-                    "${file}"
-                ],
-            },
-            "_runner": "terminal",
-            "problemMatcher": []
-        },
-        {
             "label": "chmod",
             "type": "shell",
             "command": "sudo chmod +x ${file}",
@@ -81,6 +65,7 @@
             ],
             "problemMatcher": []
         },
+        // Git API
         {
             "label": "python_git_label_config",
             "type": "shell",
@@ -101,6 +86,44 @@
                 "-f",
                 "git_create_issue.py -f ${file}",
             ],
+            "problemMatcher": []
+        },
+        {
+            "label": "bash git_make_issue_template",
+            "command": "bash",
+            "windows": {
+                "args": [
+                    "/c/Users/pluu/${workspaceFolderBasename}/scripts/git_make_issue_template.sh"
+                ],
+            },
+            "linux": {
+                "args": [
+                    "${file}"
+                ],
+            },
+            "_runner": "terminal",
+            "problemMatcher": []
+        },
+        // ESP-IDF
+        {
+            "label": "tasks_terminate",
+            "type": "process",
+            "command": "workbench.action.tasks.terminate",
+            "args": [
+                "terminateAll"
+            ],
+            "problemMatcher": []
+            // "${command:workbench.action.tasks.terminate}",
+            // "${command:workbench.action.acceptSelectedQuickOpenItem}"
+        },
+        {
+            "label": "bash esp_build_flash_monitor",
+            "command": "bash",
+            "windows": {
+                "args": [
+                    "/c/Users/pluu/${workspaceFolderBasename}/scripts/esp_idf_build_flash_monitor.sh"
+                ],
+            },
             "problemMatcher": []
         },
         {
