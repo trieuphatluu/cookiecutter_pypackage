@@ -30,6 +30,7 @@ labels = [
         "description": "Hardware Design",
         "color": "92deca",
     },
+    {"name": ":computer: Interface", "description": "Interface", "color": "92deca"},
     {
         "name": ":hourglass_flowing_sand: Priority-Low",
         "description": "Low priority",
@@ -91,7 +92,6 @@ script_dir = os.path.abspath(os.path.dirname(__file__))
 
 def requests_content(url, headers=None):
     # Web pages and URL Related
-    # FileIO Packages
     from requests.exceptions import HTTPError
 
     content = None
@@ -153,7 +153,7 @@ def create_git_labels(url, auth, labels):
 
 
 def main():
-    url = "https://api.github.com/repos/luutp/{{cookiecutter.project_slug}}/labels"
+    url = "https://api.github.com/repos/luutp/esp32stepperdriver/labels"
     token = {"Authorization": f"token {GIT_AUTH}"}
     print(token)
     print("Removing all current labels")

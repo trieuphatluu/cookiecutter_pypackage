@@ -4,14 +4,13 @@ WORKSPACE_FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && 
 PROJECT_NAME="${PWD##*/}"
 
 make_git_repo(){
-    curl -H "Authorization:token " https://api.github.com/user/repos -d "{\"name\":\"$1\", \"private\": \"true\"}"
+    curl -H "Authorization:token ${GIT_AUTH}" https://api.github.com/user/repos -d "{\"name\":\"$1\", \"private\": \"true\"}"
 }
 
 # -------------------------------------START---------------------------------------
 
 echo ${PROJECT_NAME}
 
-# git init
 git init 
 git add .
 git commit -m ":octocat:. Initialize"

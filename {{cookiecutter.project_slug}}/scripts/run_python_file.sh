@@ -4,7 +4,7 @@ WORKSPACE_FOLDER="$( cd "$( dirname "${BASH_SOURCE[0]}")/.." >/dev/null 2>&1 && 
 # Get project name from path (basename)
 PROJECT_NAME="${PWD##*/}"
 CONDA_DIR="$HOME/Anaconda3"
-CONDA_ENV=${PROJECT_NAME}
+CONDA_ENV="cobotarm"
 # -------------------------------------INCLUDE---------------------------------------
 source $WORKSPACE_FOLDER/scripts/print.sh
 export PATH=${CONDA_DIR}/Scripts:$PATH

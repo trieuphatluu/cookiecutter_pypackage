@@ -115,6 +115,34 @@ def get_latest_issue_id():
     return issue_id
 
 
+def list_project_columns(project_id):
+    url = f"https://api.github.com/projects/{project_id}/columns"
+    # url = f"https://api.github.com/luutp/projects"
+    token = {
+        "Authorization": f"token {GIT_AUTH}",
+        "Accept": "application/vnd.github.inertia-preview+json",
+    }
+    outputs = None
+    try:
+        r = requests.get(url, headers=token, timeout=10)
+        if r.status_code == 304:
+            print(f"FAILED. Status: {r.status_code} Not Modified")
+            print(f"{r.text}")
+        elif r.status_code == 401:
+            print(f"FAILED. Status: {r.status_code} Unauthorized")
+            print(f"{r.text}")
+        elif r.status_code == 403:
+            print(f"FAILED. Status: {r.status_code} Forbidden")
+            print(f"{r.text}")
+        elif r.status_code == 200:
+            outputs = r.json()
+            print(f"Status code: {r.status_code}")
+            print("SUCCESSFUL!")
+    except Exception as e:
+        print(e)
+    return outputs
+
+
 def create_project_card(column_id, issue_id):
     url = f"https://api.github.com/projects/columns/{column_id}/cards"
     token = {
